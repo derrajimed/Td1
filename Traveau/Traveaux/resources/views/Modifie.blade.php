@@ -12,30 +12,34 @@
         <div >
             @foreach($data as $val)
             <h1>Modifie </h1>
-            <div class="form-group">
-              <label for="id">id Produit:</label>
-              <input type="text" class="form-control" name="idProduit" value="{{$val->idProduit}}" >
-            </div>
-            <div class="form-group">
-              <label for="idc">id Commande :</label>
-              <input type="text" class="form-control" name="idCommande" value="{{$val->idCommande}}"> 
-            </div>
-            <div class="form-group">
-              <label for="Qte">Quantité :</label>
-              <input type="text" class="form-control" name="Quantité" value="{{$val->Qte}}">
-            </div>
-            <div class="form-group">
-              <label for="Prix">Prix:</label>
-              <input type="text" class="form-control" name="Prix" value="{{$val->Prix}}">
-            </div>
-            <div class="form-group">
-              <label for="Mantant">Mantant :</label>
-              <input type="text" class="form-control" name="Montant" value="{{$val->Montant}}">
-            </div>
-            <div>
-            <a href="/updateCommande/{{$val->id}}" class="btn btn-info  ">Modifie</button></div>
+            <form action="/store" method="post" >
+        @csrf
+        <div class="form-group w-75 m-3" >
+    <label for="Produit">N° Produit</label>
+    <input type="text" class="form-control" name="idProduit" value="{{$val->idProduit}}"  >
+  </div>
+  <div  class="form-group w-75 m-3" >
+    <label for="Produit">N° Commande</label>
+    <input type="text" class="form-control" name="idCommande" value="{{$val->idCommande}}" >
+  </div>
+  <div  class="form-group w-75 m-3" >
+    <label for="Produit">Qte</label>
+    <input type="text" class="form-control" name="Quantité" value="{{$val->Qte}}"  >
+  </div>
+  <div  class="form-group w-75 m-3" >
+    <label for="Produit">Prix</label>
+    <input type="text" class="form-control" name="Prix" value="{{$val->Prix}}"  >
+  </div>
+  <div  class="form-group w-75 m-3" >
+    <label for="Produit">Total</label>
+    <input type="text" class="form-control" name="Montant" value="{{$val->Montant}}"  >
+  </div>
+  <div >
+    <a href="/upd/modification/{id}" class="btn btn-primary w-25  m-3">Modifie</a>
+  </div>
 
 
+      </form>
           @endforeach 
 
         </div>

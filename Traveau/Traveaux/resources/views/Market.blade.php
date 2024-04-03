@@ -14,7 +14,7 @@
         @csrf
         <div class="row m-2">
           <div class="col-2">
-            <input type="text" name="idProduit" placeholder="id Produit">
+            <input type="text" name="idProduit" placeholder="id Produit" >
           </div>
           <div class="col-2">
           <input type="text" name="idCommande" placeholder="id Commande">
@@ -55,11 +55,18 @@
       <td>{{$val->Montant}}</td>
       <td>{{$val->created_at}}</td>
       <td class="row"> 
-        <form method="post" class="col-6">
-            <a href="/{{$val->id}}" class="btn btn-info">Delete</a>
-        </form>
-      
+      <form method="post" class="col-6 ">
+          <div class="row">
+            <div class="col-6 ">
+            <a href="/{{$val->id}}" class="btn btn-info ">Delete</a>
+            </div>
+            <div class="col-6 text-center">
+            <a href="upd/{{$val->id}}" class="btn btn-info">Update</a>
 
+            </div>
+          </div>
+
+        </form>
       </td>
     </tr>
     @endforeach
